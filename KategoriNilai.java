@@ -2,24 +2,62 @@ import java.util.Scanner;
 
 public class KategoriNilai {
     public static void main(String[] args) {
+        
         Scanner input = new Scanner (System.in);
         System.out.println("Masukkan Nilai Anda");
-        int Nilai =input.nextInt();
-        
-        if (Nilai >=90 && Nilai <=101) {
-            System.out.println("Selamat Atas Kerja Keras Anda )(A)");
-        }else if(Nilai >= 80 && Nilai <=91){
-            System.out.println("Kerja Bagus :0 (B)");
-        }else if(Nilai >=60 && Nilai <=81){
-            System.out.println("Belajar Yang Giat Ya :) (C)");
-        }else if(Nilai >= 40 && Nilai <=61){
-            System.out.println("Teruslah Mencoba (D)");
-        }else if(Nilai >=20 && Nilai <=41){
-            System.out.println("Mohon Untuk Belajar Lebih Giat Lagi (E)");
-        }else if(Nilai >=0 && Nilai <=21){
-            System.out.println("Coba Lagi Lain Waktu (F)");
-            }else{
-            System.out.println("Maaf Anda Tidak Masuk Nominasi");
+        int nilai =input.nextInt();
+        String predikat;
+
+        if (nilai >= 96 && nilai <= 100) {
+            predikat = "A";
+        } else if (nilai >= 91 && nilai <= 95) {
+            predikat = "A-";
+        } else if (nilai >= 86 && nilai <= 90) {
+            predikat = "B+";
+        } else if (nilai >= 81 && nilai <= 85) {
+            predikat = "B";
+        } else if (nilai >= 75 && nilai <= 80) {
+            predikat = "B-";
+        } else if (nilai >= 70 && nilai <= 74) {
+            predikat = "C+";
+        } else if (nilai >= 65 && nilai <= 69) {
+            predikat = "C";
+        } else if (nilai >= 60 && nilai <= 64) {
+            predikat = "C-";
+        } else if (nilai >= 55 && nilai <= 59) {
+            predikat = "D+";
+        } else if (nilai >= 0 && nilai <= 54) {
+            predikat = "D";
+        } else {
+            predikat = "Tidak Valid";
+        }
+
+        System.out.println("Predikat nilai Anda: " + predikat);
+
+        switch (predikat) {
+            case "A":
+                System.out.println("Sangat Baik");
+                 break;
+            case "A-":
+            case "B+":
+                System.out.println("Baik Sekali");
+                break;
+            case "B":
+            case "B-":
+                System.out.println("Baik");
+                break;
+            case "C+":
+            case "C":
+            case "C-":
+                System.out.println("Cukup");
+                break;
+            case "D+":
+            case "D":
+                System.out.println("Kurang");
+                break;
+            default:
+                System.out.println("Nilai tidak valid");
+             break;
         }
     }
 }
